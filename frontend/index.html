@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ballot Box dApp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Ballot Box</h1>
+    <p class="sub">A tiny on-chain election running on your local Ganache blockchain.</p>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="conn">
+      <h2 id="conn">Connection</h2>
+      <label for="accountSelect">Acting as</label>
+      <select id="accountSelect"></select>
+      <dl class="facts">
+        <dt>Contract</dt><dd id="contractAddr">not loaded</dd>
+        <dt>Owner</dt><dd id="ownerAddr">-</dd>
+        <dt>Voting</dt><dd id="status">-</dd>
+      </dl>
+    </section>
+
+    <section class="panel" aria-labelledby="cand">
+      <h2 id="cand">Candidates</h2>
+      <ul id="candidateList" class="candidates"></ul>
+      <p id="emptyMsg" class="hint" hidden>No candidates yet. The owner can add one below.</p>
+    </section>
+
+    <section class="panel" id="adminPanel" aria-labelledby="admin">
+      <h2 id="admin">Owner controls</h2>
+      <div class="row">
+        <input id="newCandidate" type="text" placeholder="Candidate name" />
+        <button id="addBtn">Add candidate</button>
+      </div>
+      <button id="toggleBtn" class="secondary">Close voting</button>
+      <p class="hint" id="adminHint">Switch to the owner account (first Ganache account) to use these.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="log">
+      <h2 id="log">Activity</h2>
+      <p id="message" class="message" role="status"></p>
+      <ul id="events" class="events"></ul>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

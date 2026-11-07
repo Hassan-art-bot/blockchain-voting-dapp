@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-voting-dapp",
+  "version": "1.0.0",
+  "description": "MG3012 Assignment 3 - Voting dApp with Truffle & Ganache",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "license": "MIT"
+}
